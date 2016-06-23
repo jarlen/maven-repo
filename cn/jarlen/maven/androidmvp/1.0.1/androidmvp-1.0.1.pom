@@ -3,12 +3,12 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>cn.jarlen.maven</groupId>
-  <artifactId>mvp</artifactId>
-  <version>0.0.0.1</version>
+  <artifactId>androidmvp</artifactId>
+  <version>1.0.1</version>
   <packaging>aar</packaging>
-  <name>MVP mvp</name>
+  <name>AndroidMVP androidmvp</name>
   <description>A modern implementation of the M-V-P for Android</description>
-  <url>https://github.com/jarlen/MVP</url>
+  <url>http://git.oschina.net/jarlen/AndroidMVP</url>
   <licenses>
     <license>
       <name>The Apache Software License, Version 2.0</name>
@@ -23,9 +23,9 @@
     </developer>
   </developers>
   <scm>
-    <connection>scm:git@github.com:jarlen/MVP.git</connection>
-    <developerConnection>scm:git@github.com:jarlen/MVP.git</developerConnection>
-    <url>https://github.com/jarlen/MVP</url>
+    <connection>scm:git@git.oschina.net:jarlen/AndroidMVP.git</connection>
+    <developerConnection>scm:git@git.oschina.net:jarlen/AndroidMVP.git</developerConnection>
+    <url>http://git.oschina.net/jarlen/AndroidMVP</url>
   </scm>
   <dependencies>
     <dependency>
