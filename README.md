@@ -15,7 +15,7 @@ And you can use the artifacts like this:
 ```
 dependencies {
     ......
-    compile 'cn.jarlen.maven:mvp:0.0.0.1'
+    compile 'cn.jarlen.maven:androidmvp:1.0.1'
     ......
 }
 ```
