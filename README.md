@@ -1,6 +1,22 @@
-# How to use
+# maven-repo
 
-Simply add the repository to your build.gradle file:
+Common tools
+
+#Usage
+
+##for Gradle
+
+```
+dependencies {
+    ......
+    compile 'cn.jarlen.maven:androidmvp:1.0.1'
+    compile 'cn.jarlen.maven:richcommon:1.2.1'
+    ......
+}
+```
+## Using SNAPSHOT
+
+add this to repositories section in build.gradle
 
 ```
 repositories {
@@ -8,16 +24,6 @@ repositories {
         jcenter()
 
     }
-```
-
-And you can use the artifacts like this:
-
-```
-dependencies {
-    ......
-    compile 'cn.jarlen.maven:androidmvp:1.0.1'
-    ......
-}
 ```
 
 # ChangeLog
