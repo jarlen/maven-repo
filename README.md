@@ -28,6 +28,10 @@ repositories {
 
 # ChangeLog
 
+* richcommon1.2.2      2016-8-30
+	
+	添加水印view、可循环回收的Imageview
+
 * richcommon1.2.1      2016-8-1
 
 
