@@ -11,6 +11,7 @@ dependencies {
     ......
     compile 'cn.jarlen.maven:androidmvp:1.0.1'
     compile 'cn.jarlen.maven:richcommon:1.2.1'
+    compile 'cn.jarlen.maven:okhttppatch:3.4.2'
     ......
 }
 ```
