@@ -9,8 +9,7 @@ Common tools
 ```
 dependencies {
     ......
-    compile 'cn.jarlen.maven:androidmvp:1.0.1'
-    compile 'cn.jarlen.maven:richcommon:1.2.1'
+    compile 'cn.jarlen.maven:richcommon:1.2.4'
     compile 'cn.jarlen.maven:okhttppatch:3.4.2'
     ......
 }
@@ -29,14 +28,133 @@ repositories {
 
 # ChangeLog
 
-* richcommon1.2.2      2016-8-30
-	
-	添加水印view、可循环回收的Imageview
+####发布 richcommon1.2.4        2016-12-13
 
-* richcommon1.2.1      2016-8-1
+**RvCommonAdapter的扩展,支持多类型ItemView的列表 **
+
+```
+public int getLayoutResId(int viewType) {
+
+            switch (viewType) {
+                case 0:
+                    return R.layout.layout_rv_item_one;
+                case 1:
+                    return R.layout.layout_rv_item_two;
+                case 2:
+                    return R.layout.layout_rv_item_three;
+                case 3:
+                    return R.layout.layout_rv_item_four;
+
+                default:
+
+                    return R.layout.layout_rv_item_one;
+
+            }
+        }
+
+```
+
+**CommonAdapter的扩展,支持多类型ItemView的列表 **
+
+```
+public int getLayoutResId(int position) {
+                return R.layout.layout_list_item;
+            }
+```
+
+**实现MVP基础架构**
+
+**View : **基于activity、fragment
+
+1. 支持泛型
+2. Code量较少
+3. 不用关心MVP之间的流程 
+
+--- 基于 Activity
+
+1. 继承IBaseView, 编写View层显示接口
+
+```
+public interface AddView extends IBaseView {
+    void showAdd(String sum);
+}
+```
+
+2. 继承BaseMvpActivity, 实现VIew层接口
+
+类头:
+AddActivity extends BaseMvpActivity<AddPresenter, AddView> implements AddView
+
+```
+ @Override
+    public void showAdd(String sum) {
+        result.setText(sum);
+    }
+```
+3. 继承 BaseActivityPresenter,实现业务层逻辑
+
+```
+public class AddPresenter extends BaseActivityPresenter<AddView> {
+
+    public void add(String a, String b) {
+        int sum = Integer.valueOf(a) + Integer.valueOf(b);
+        getView().showAdd("" + sum);
+    }
+}
+```
+
+--- 基于 Fragment
+
+1. 继承IBaseView, 编写View层显示接口
+2. 继承BaseMvpFragment, 实现VIew层接口
+3. 继承 BaseFragmentPresenter,实现业务层逻辑
+
+####发布  richcommon1.2.3        2016-11-15  
+
+ 进一步优化可复用的Adapter
+ 
+ 1.**支持泛型**
+ 
+ 2.**Code量更少**
 
 
-#richcommon
+* 基于**ListView**的Adapter的**CommonAdapter**
+
+```
+commonAdapter = new CommonAdapter<String>(this) {
+            @Override
+            public void onBindView(ViewHolder viewHolder, String item) {
+                TextView tv = viewHolder.getView(R.id.tv);
+                tv.setText(item);
+            }
+
+            @Override
+            public int getLayoutResId() {
+                return R.layout.layout_list_item;
+            }
+        };
+mListView.setAdapter(commonAdapter);
+```
+
+* 基于**RecycleView.Adapter**的**RvCommonAdapter**
+
+```
+    @Override
+    public void onBindView(RvViewHolder viewHolder, String item) {
+        ImageView image = viewHolder.getView(R.id.iv_image);
+        Bitmap bitmap = ImageUtils.getBitmapByPath(item);
+        image.setImageBitmap(bitmap);
+    }
+```
+
+* 基于**RecycleView.Adapter**的**RvViewHolder**
+
+		与ViewHolder相似
+
+####发布 richcommon1.2.2     2016-8-30
+* 添加水印view、可循环回收的Imageview
+
+
 ##一、包:Adapter 
 ###1、extends SimpleBaseAdapter 实现getView();
    
