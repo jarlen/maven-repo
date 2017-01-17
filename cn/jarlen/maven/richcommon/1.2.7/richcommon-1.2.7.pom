@@ -13,12 +13,12 @@
     <license>
       <name>The Apache Software License, Version 2.0</name>
       <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-      <distribution>repojarlen</distribution>
+      <distribution>repo</distribution>
     </license>
   </licenses>
   <developers>
     <developer>
-      <id></id>
+      <id>jarlen</id>
       <name>jarlen huang</name>
     </developer>
   </developers>
